@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-import h5py
 import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr
@@ -25,15 +24,15 @@ def charger_sujet(nom, fichier=None):
     if fichier is None:
         fichier = FICHIER if FICHIER.is_file() else Path.home() / "Downloads" / FICHIER.name
     recording = nom if nom.endswith("_task-categorisation") else f"{nom}_task-categorisation"
-    with h5py.File(Path(fichier).expanduser(), "r") as ds:
-        recordings = ds["recording"].asstr()[:].tolist()
-        if recording not in recordings:
+    with xr.open_dataset(Path(fichier).expanduser(), engine="netcdf4") as ds:
+        if recording not in ds.indexes["recording"]:
             raise ValueError(f"Enregistrement introuvable : {recording}")
-        i = recordings.index(recording)
-        epochs = np.flatnonzero(ds["event_name"].asstr()[i] == "display")
-        images = ds["food_image_code"].asstr()[i, epochs]
-        health = ds["event_type"].asstr()[i, epochs] == "health"
-        reponses = ds["resp_choice"].asstr()[i, epochs][health]
+        sujet = ds.sel(recording=recording)
+        epochs = np.flatnonzero(sujet["event_name"].values == "display")
+        essais = sujet.isel(epoch=epochs)
+        images = essais["food_image_code"].values
+        health = essais["event_type"].values == "health"
+        reponses = essais["resp_choice"].values[health]
 
         images_health = images[health]
         if np.any(np.isin(images, ["", "nan", "None"])):
@@ -48,19 +47,20 @@ def charger_sujet(nom, fichier=None):
             raise ValueError(f"{nom} : {len(manquantes)} images sans réponse Healthy?.")
         y = np.array([etiquette[image] for image in images], dtype=int)
 
-        temps = ds["sample"][:] * 1000 / np.asarray(ds.attrs["sfreq"]).item()
+        temps = sujet["sample"].values * 1000 / np.asarray(ds.attrs["sfreq"]).item()
         fenetre = np.flatnonzero((temps >= -100) & (temps <= 1000))
         debut, fin = fenetre[0], fenetre[-1] + 1
-        X = xr.DataArray(
-            ds["data"][i, epochs, :, debut:fin],
-            dims=("epoch", "channel", "time_ms"),
-            coords={
-                "epoch": ds["epoch"][epochs],
-                "channel": ds["channel"].asstr()[:],
-                "time_ms": temps[debut:fin],
-                "food_image_code": ("epoch", images),
-            },
-            name="EEG",
+        X = (
+            essais["data"]
+            .isel(sample=slice(debut, fin))
+            .reset_coords(drop=True)
+            .rename({"sample": "time_ms"})
+            .assign_coords(
+                time_ms=temps[debut:fin],
+                food_image_code=("epoch", images),
+            )
+            .rename("EEG")
+            .load()
         )
     return X, y, images
 
