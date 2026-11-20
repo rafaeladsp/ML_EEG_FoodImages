@@ -1,4 +1,4 @@
-"""Chargement, validation et visualisation du décodage Healthy? par sujet."""
+"""Loading, validation and plotting for per-subject "Healthy?" decoding."""
 
 from pathlib import Path
 
@@ -11,52 +11,52 @@ from sklearn.model_selection import (
     cross_val_score,
 )
 
-FICHIER = Path(__file__).with_name("epoch_data_6sujets.nc")
+DATA_FILE = Path(__file__).with_name("epoch_data_6sujets.nc")
 
 
-def charger_sujet(nom, fichier=None):
-    """Renvoie X (epoch, channel, time_ms), y (No=0, Yes=1) et les codes image.
+def load_subject(name, data_file=None):
+    """Return X (epoch, channel, time_ms), y (No=0, Yes=1) and the image codes.
 
-    Les étiquettes sont tirées des essais health et reportées sur tous les
-    essais display de la même image. Seul le sujet demandé est lu.
-    Sans chemin explicite, cherche le fichier près du module puis dans Downloads.
+    Labels are taken from the "health" trials and copied to every "display"
+    trial of the same image. Only the requested subject is read.
+    Without an explicit path, look for the file next to this module, then in Downloads.
     """
-    if fichier is None:
-        fichier = FICHIER if FICHIER.is_file() else Path.home() / "Downloads" / FICHIER.name
-    recording = nom if nom.endswith("_task-categorisation") else f"{nom}_task-categorisation"
-    with xr.open_dataset(Path(fichier).expanduser(), engine="netcdf4") as ds:
+    if data_file is None:
+        data_file = DATA_FILE if DATA_FILE.is_file() else Path.home() / "Downloads" / DATA_FILE.name
+    recording = name if name.endswith("_task-categorisation") else f"{name}_task-categorisation"
+    with xr.open_dataset(Path(data_file).expanduser(), engine="netcdf4") as ds:
         if recording not in ds.indexes["recording"]:
-            raise ValueError(f"Enregistrement introuvable : {recording}")
-        sujet = ds.sel(recording=recording)
-        epochs = np.flatnonzero(sujet["event_name"].values == "display")
-        essais = sujet.isel(epoch=epochs)
-        images = essais["food_image_code"].values
-        health = essais["event_type"].values == "health"
-        reponses = essais["resp_choice"].values[health]
+            raise ValueError(f"Recording not found: {recording}")
+        subject = ds.sel(recording=recording)
+        epochs = np.flatnonzero(subject["event_name"].values == "display")
+        trials = subject.isel(epoch=epochs)
+        images = trials["food_image_code"].values
+        health = trials["event_type"].values == "health"
+        answers = trials["resp_choice"].values[health]
 
-        images_health = images[health]
+        health_images = images[health]
         if np.any(np.isin(images, ["", "nan", "None"])):
-            raise ValueError(f"{nom} : code image manquant.")
-        if len(np.unique(images_health)) != len(images_health):
-            raise ValueError(f"{nom} : plusieurs essais Healthy? pour une image.")
-        if not np.isin(reponses, ["Yes", "No"]).all():
-            raise ValueError(f"{nom} : réponse Healthy? manquante ou invalide.")
-        etiquette = dict(zip(images_health, reponses == "Yes"))
-        manquantes = set(images) - etiquette.keys()
-        if manquantes:
-            raise ValueError(f"{nom} : {len(manquantes)} images sans réponse Healthy?.")
-        y = np.array([etiquette[image] for image in images], dtype=int)
+            raise ValueError(f"{name}: missing image code.")
+        if len(np.unique(health_images)) != len(health_images):
+            raise ValueError(f"{name}: several Healthy? trials for one image.")
+        if not np.isin(answers, ["Yes", "No"]).all():
+            raise ValueError(f"{name}: missing or invalid Healthy? answer.")
+        label = dict(zip(health_images, answers == "Yes"))
+        missing = set(images) - label.keys()
+        if missing:
+            raise ValueError(f"{name}: {len(missing)} images without a Healthy? answer.")
+        y = np.array([label[image] for image in images], dtype=int)
 
-        temps = sujet["sample"].values * 1000 / np.asarray(ds.attrs["sfreq"]).item()
-        fenetre = np.flatnonzero((temps >= -100) & (temps <= 1000))
-        debut, fin = fenetre[0], fenetre[-1] + 1
+        time_ms = subject["sample"].values * 1000 / np.asarray(ds.attrs["sfreq"]).item()
+        window = np.flatnonzero((time_ms >= -100) & (time_ms <= 1000))
+        start, stop = window[0], window[-1] + 1
         X = (
-            essais["data"]
-            .isel(sample=slice(debut, fin))
+            trials["data"]
+            .isel(sample=slice(start, stop))
             .reset_coords(drop=True)
             .rename({"sample": "time_ms"})
             .assign_coords(
-                time_ms=temps[debut:fin],
+                time_ms=time_ms[start:stop],
                 food_image_code=("epoch", images),
             )
             .rename("EEG")
@@ -65,67 +65,74 @@ def charger_sujet(nom, fichier=None):
     return X, y, images
 
 
-def decoder_temps(X, y, groupes, clf, *, n_splits=5, seed=42, grouper=True):
-    """Renvoie l'AUC moyenne par instant avec les mêmes plis à chaque instant.
+def decode_time(X, y, groups, clf, *, n_splits=5, seed=42, grouped=True):
+    """Return the mean AUC at each time point, using the same folds at every time point.
 
-    Passer grouper=False pour comparer à une validation stratifiée par essai.
-    Fournir un Pipeline si le classifieur nécessite une standardisation ou PCA.
+    Pass grouped=False to compare with a per-trial stratified cross-validation.
+    Pass a Pipeline if the classifier needs standardisation or PCA.
     """
     eeg = X.transpose("epoch", "channel", "time_ms").values
     y = np.asarray(y)
-    groupes = np.asarray(groupes)
-    if y.shape != (len(eeg),) or groupes.shape != y.shape:
-        raise ValueError("X, y et groupes doivent correspondre essai par essai.")
+    groups = np.asarray(groups)
+    if y.shape != (len(eeg),) or groups.shape != y.shape:
+        raise ValueError("X, y and groups must match trial by trial.")
     if not np.array_equal(np.unique(y), [0, 1]):
-        raise ValueError("L'AUC binaire requiert les deux classes 0 et 1.")
+        raise ValueError("Binary AUC requires both classes 0 and 1.")
 
-    if grouper:
+    if grouped:
         cv = StratifiedGroupKFold(n_splits=n_splits, shuffle=True, random_state=seed)
-        plis = list(cv.split(eeg[:, :, 0], y, groupes))
+        folds = list(cv.split(eeg[:, :, 0], y, groups))
     else:
         cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
-        plis = list(cv.split(eeg[:, :, 0], y))
-    if any(len(np.unique(y[idx])) < 2 for pli in plis for idx in pli):
-        raise ValueError("Un pli ne contient qu'une classe. Réduire n_splits.")
+        folds = list(cv.split(eeg[:, :, 0], y))
+    if any(len(np.unique(y[idx])) < 2 for fold in folds for idx in fold):
+        raise ValueError("A fold contains only one class. Reduce n_splits.")
 
     auc = [
-        cross_val_score(clf, eeg[:, :, t], y, cv=plis, scoring="roc_auc", error_score="raise").mean()
+        cross_val_score(clf, eeg[:, :, t], y, cv=folds, scoring="roc_auc", error_score="raise").mean()
         for t in range(eeg.shape[2])
     ]
     return xr.DataArray(auc, dims="time_ms", coords={"time_ms": X.time_ms}, name="auc")
 
 
-def controle_hasard(X, y, groupes, clf, *, n_permutations=20, n_splits=5, seed=42):
-    """Renvoie une courbe d'AUC par permutation des étiquettes entre images."""
+def chance_control(X, y, groups, clf, *, n_permutations=20, n_splits=5, seed=42):
+    """Return one AUC curve per permutation of the labels across images."""
     if n_permutations < 1:
-        raise ValueError("n_permutations doit être positif.")
-    _, premieres, inverse = np.unique(groupes, return_index=True, return_inverse=True)
+        raise ValueError("n_permutations must be positive.")
+    _, first, inverse = np.unique(groups, return_index=True, return_inverse=True)
     y = np.asarray(y)
-    labels_image = y[premieres]
-    if not np.array_equal(y, labels_image[inverse]):
-        raise ValueError("Chaque image doit avoir une seule étiquette.")
+    image_labels = y[first]
+    if not np.array_equal(y, image_labels[inverse]):
+        raise ValueError("Each image must have a single label.")
 
     rng = np.random.default_rng(seed)
-    courbes = [
-        decoder_temps(
-            X, rng.permutation(labels_image)[inverse], groupes, clf,
+    curves = [
+        decode_time(
+            X, rng.permutation(image_labels)[inverse], groups, clf,
             n_splits=n_splits, seed=seed,
         )
         for _ in range(n_permutations)
     ]
-    return xr.concat(courbes, dim="permutation", join="exact")
+    return xr.concat(curves, dim="permutation", join="exact")
 
 
-def tracer(courbes):
-    """Trace une liste de courbes individuelles et renvoie la figure et ses axes."""
-    auc = xr.concat(list(courbes), dim="sujet", join="exact")
+def plot_curves(curves):
+    """Plot a list of individual curves and return the figure and its axes."""
+    auc = xr.concat(list(curves), dim="subject", join="exact")
     fig, ax = plt.subplots()
-    for i, courbe in enumerate(auc):
-        ax.plot(auc.time_ms, courbe, color="0.7", label="Sujets" if i == 0 else None)
-    ax.plot(auc.time_ms, auc.mean("sujet"), color="tab:blue", linewidth=2, label="Moyenne")
-    ax.axhline(0.5, color="0.35", linestyle="--", label="Hasard")
+    for i, curve in enumerate(auc):
+        ax.plot(auc.time_ms, curve, color="0.7", label="Subjects" if i == 0 else None)
+    ax.plot(auc.time_ms, auc.mean("subject"), color="tab:blue", linewidth=2, label="Mean")
+    ax.axhline(0.5, color="0.35", linestyle="--", label="Chance")
     ax.axvline(0, color="0.35", linestyle=":")
-    ax.set(xlabel="Temps depuis l’apparition de l’image (ms)", ylabel="AUC ROC")
+    ax.set(xlabel="Time from image onset (ms)", ylabel="ROC AUC")
     ax.legend()
     fig.tight_layout()
     return fig, ax
+
+
+# French names kept as aliases, so that existing notebooks still run.
+charger_sujet = load_subject
+decoder_temps = decode_time
+controle_hasard = chance_control
+tracer = plot_curves
