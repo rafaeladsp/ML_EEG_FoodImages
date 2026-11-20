@@ -1,0 +1,9 @@
+model,mean,std,n_above_chance,most_chosen_params
+SVM RBF,0.5217973098726094,0.08508757786329879,3,"{'svc__C': 0.1, 'svc__gamma': 0.01} (6/30)"
+LDA shrinkage,0.5158139014746449,0.07783136318820837,3,{'lineardiscriminantanalysis__shrinkage': 'auto'} (30/30)
+MLP,0.5131749904935499,0.04751742900941379,4,"{'mlpclassifier__alpha': 1, 'mlpclassifier__hidden_layer_sizes': (16,)} (9/30)"
+LogReg L2,0.5073464152218917,0.0780696317860302,3,{'logisticregression__C': 0.001} (9/30)
+SVM Linear,0.4995679349900483,0.08582482684978948,3,{'linearsvc__C': 0.001} (10/30)
+LogReg L1,0.49876925070007855,0.06873201203973221,1,{'logisticregression__C': 0.1} (10/30)
+LogReg ElasticNet,0.49819712513339964,0.07786313795427736,2,"{'logisticregression__C': 0.01, 'logisticregression__l1_ratio': 0.2} (8/30)"
+KNN,0.49237235742954694,0.06925281598079062,3,"{'kneighborsclassifier__n_neighbors': 15, 'kneighborsclassifier__weights': 'uniform'} (9/30)"
