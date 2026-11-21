@@ -1,0 +1,55 @@
+target,features,model,mean_r,std_r,n_r_above_0,mean_R2,mean_RMSE
+healthiness,200–500 ms,Mean baseline,0.0,0.0,0,-0.011,34.066
+healthiness,200–500 ms,Least squares,0.044,0.233,3,-2.085,58.675
+healthiness,200–500 ms,PCA + least squares,0.134,0.177,5,-0.007,33.979
+healthiness,200–500 ms,Ridge,0.127,0.195,4,0.014,33.641
+healthiness,200–500 ms,PCA + ridge,0.132,0.183,4,0.005,33.795
+healthiness,200–500 ms,Lasso,0.117,0.189,2,0.013,33.67
+healthiness,200–500 ms,Elastic net,0.118,0.197,3,0.015,33.632
+healthiness,200–500 ms,Linear SVR,0.129,0.191,5,-0.034,34.46
+healthiness,200–500 ms,RBF SVR,0.129,0.178,4,-0.082,35.22
+tastiness,200–500 ms,Mean baseline,0.0,0.0,0,-0.007,30.128
+tastiness,200–500 ms,Least squares,0.015,0.17,3,-1.902,50.723
+tastiness,200–500 ms,PCA + least squares,0.13,0.167,5,0.001,30.028
+tastiness,200–500 ms,Ridge,0.165,0.121,6,-0.005,30.111
+tastiness,200–500 ms,PCA + ridge,0.173,0.123,6,-0.003,30.085
+tastiness,200–500 ms,Lasso,0.048,0.138,2,-0.015,30.302
+tastiness,200–500 ms,Elastic net,0.047,0.127,4,-0.012,30.225
+tastiness,200–500 ms,Linear SVR,0.156,0.128,5,-0.111,31.537
+tastiness,200–500 ms,RBF SVR,0.091,0.096,5,-0.142,31.972
+willingness,200–500 ms,Mean baseline,0.0,0.0,0,-0.007,33.369
+willingness,200–500 ms,Least squares,0.037,0.128,3,-1.867,56.266
+willingness,200–500 ms,PCA + least squares,0.093,0.215,4,-0.003,33.31
+willingness,200–500 ms,Ridge,0.156,0.154,5,0.008,33.138
+willingness,200–500 ms,PCA + ridge,0.154,0.161,5,0.001,33.245
+willingness,200–500 ms,Lasso,0.05,0.152,3,-0.023,33.651
+willingness,200–500 ms,Elastic net,0.052,0.164,3,-0.006,33.358
+willingness,200–500 ms,Linear SVR,0.111,0.177,4,-0.082,34.535
+willingness,200–500 ms,RBF SVR,0.061,0.13,3,-0.101,34.861
+healthiness,9 windows,Mean baseline,0.0,0.0,0,-0.011,34.066
+healthiness,9 windows,Least squares,0.032,0.176,3,-1.188,49.904
+healthiness,9 windows,PCA + least squares,0.056,0.146,3,-0.062,34.918
+healthiness,9 windows,Ridge,0.075,0.216,3,0.003,33.835
+healthiness,9 windows,PCA + ridge,0.057,0.206,3,-0.016,34.166
+healthiness,9 windows,Lasso,0.015,0.04,2,-0.018,34.191
+healthiness,9 windows,Elastic net,0.069,0.155,3,0.0,33.886
+healthiness,9 windows,Linear SVR,0.09,0.189,4,-0.061,34.886
+healthiness,9 windows,RBF SVR,0.033,0.182,4,-0.041,34.548
+tastiness,9 windows,Mean baseline,0.0,0.0,0,-0.007,30.128
+tastiness,9 windows,Least squares,0.178,0.204,5,-0.768,40.014
+tastiness,9 windows,PCA + least squares,0.172,0.173,5,-0.014,30.259
+tastiness,9 windows,Ridge,0.209,0.174,5,-0.006,30.19
+tastiness,9 windows,PCA + ridge,0.185,0.178,5,-0.007,30.178
+tastiness,9 windows,Lasso,0.135,0.179,5,-0.005,30.141
+tastiness,9 windows,Elastic net,0.129,0.195,4,-0.009,30.236
+tastiness,9 windows,Linear SVR,0.201,0.152,6,-0.103,31.571
+tastiness,9 windows,RBF SVR,0.115,0.192,4,-0.06,31.013
+willingness,9 windows,Mean baseline,0.0,0.0,0,-0.007,33.369
+willingness,9 windows,Least squares,0.133,0.215,4,-0.852,45.077
+willingness,9 windows,PCA + least squares,0.175,0.195,5,-0.009,33.39
+willingness,9 windows,Ridge,0.209,0.183,5,0.013,33.044
+willingness,9 windows,PCA + ridge,0.206,0.183,6,0.014,33.032
+willingness,9 windows,Lasso,0.143,0.173,4,-0.006,33.353
+willingness,9 windows,Elastic net,0.134,0.21,4,0.006,33.175
+willingness,9 windows,Linear SVR,0.2,0.175,6,-0.056,34.113
+willingness,9 windows,RBF SVR,0.179,0.185,5,0.001,33.26

@@ -1,0 +1,22 @@
+target,model,mean_r,std_r,n_r_above_0,mean_R2,mean_RMSE
+healthiness,Mean baseline,0.0,0.0,0,-0.011,34.066
+healthiness,Least squares,0.044,0.233,3,-2.085,58.675
+healthiness,Ridge,0.126,0.196,4,0.014,33.64
+healthiness,Lasso,0.117,0.189,2,0.013,33.67
+healthiness,Elastic net,0.127,0.194,3,0.025,33.445
+healthiness,Linear SVR,0.125,0.194,5,-0.033,34.438
+healthiness,RBF SVR,0.119,0.173,4,-0.069,35.015
+tastiness,Mean baseline,0.0,0.0,0,-0.007,30.128
+tastiness,Least squares,0.015,0.17,3,-1.902,50.723
+tastiness,Ridge,0.166,0.121,6,-0.005,30.106
+tastiness,Lasso,0.048,0.138,2,-0.015,30.302
+tastiness,Elastic net,0.045,0.131,3,-0.013,30.243
+tastiness,Linear SVR,0.158,0.126,5,-0.109,31.509
+tastiness,RBF SVR,0.112,0.112,5,-0.111,31.557
+willingness,Mean baseline,0.0,0.0,0,-0.007,33.369
+willingness,Least squares,0.037,0.128,3,-1.867,56.266
+willingness,Ridge,0.156,0.154,5,0.008,33.135
+willingness,Lasso,0.05,0.152,3,-0.023,33.651
+willingness,Elastic net,0.06,0.168,3,-0.007,33.378
+willingness,Linear SVR,0.113,0.174,4,-0.081,34.513
+willingness,RBF SVR,0.071,0.126,4,-0.09,34.677
