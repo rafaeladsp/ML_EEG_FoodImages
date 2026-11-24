@@ -64,6 +64,55 @@ def load_subject(name, data_file=None):
         )
     return X, y, images
 
+def load_subject_choice(name, data_file=None):
+    """Return X (epoch, channel, time_ms), y (No=0, Yes=1) and the image codes.
+
+    Labels are taken from the "health" trials and copied to every "display"
+    trial of the same image. Only the requested subject is read.
+    Without an explicit path, look for the file next to this module, then in Downloads.
+    """
+    if data_file is None:
+        data_file = DATA_FILE if DATA_FILE.is_file() else Path.home() / "Downloads" / DATA_FILE.name
+    recording = name if name.endswith("_task-categorisation") else f"{name}_task-categorisation"
+    with xr.open_dataset(Path(data_file).expanduser(), engine="netcdf4") as ds:
+        if recording not in ds.indexes["recording"]:
+            raise ValueError(f"Recording not found: {recording}")
+        subject = ds.sel(recording=recording)
+        epochs = np.flatnonzero(subject["event_name"].values == "choice")
+        trials = subject.isel(epoch=epochs)
+        images = trials["food_image_code"].values
+        health = trials["event_type"].values == "health"
+        answers = trials["resp_choice"].values[health]
+
+        health_images = images[health]
+        if np.any(np.isin(images, ["", "nan", "None"])):
+            raise ValueError(f"{name}: missing image code.")
+        if len(np.unique(health_images)) != len(health_images):
+            raise ValueError(f"{name}: several Healthy? trials for one image.")
+        if not np.isin(answers, ["Yes", "No"]).all():
+            raise ValueError(f"{name}: missing or invalid Healthy? answer.")
+        label = dict(zip(health_images, answers == "Yes"))
+        missing = set(images) - label.keys()
+        if missing:
+            raise ValueError(f"{name}: {len(missing)} images without a Healthy? answer.")
+        y = np.array([label[image] for image in images], dtype=int)
+
+        time_ms = subject["sample"].values * 1000 / np.asarray(ds.attrs["sfreq"]).item()
+        window = np.flatnonzero((time_ms >= -100) & (time_ms <= 1000))
+        start, stop = window[0], window[-1] + 1
+        X = (
+            trials["data"]
+            .isel(sample=slice(start, stop))
+            .reset_coords(drop=True)
+            .rename({"sample": "time_ms"})
+            .assign_coords(
+                time_ms=time_ms[start:stop],
+                food_image_code=("epoch", images),
+            )
+            .rename("EEG")
+            .load()
+        )
+    return X, y, images
 
 def decode_time(X, y, groups, clf, *, n_splits=5, seed=42, grouped=True):
     """Return the mean AUC at each time point, using the same folds at every time point.
