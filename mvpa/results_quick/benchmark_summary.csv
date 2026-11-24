@@ -1,0 +1,16 @@
+target,model,mean_r,std_r,n_r_above_0,mean_R2,mean_RMSE
+healthiness,CatBoost,0.1013,0.1297,26,-0.0831,33.6284
+healthiness,Mean baseline,0.0000,0.0000,0,-0.0335,32.8017
+healthiness,Ridge,0.0651,0.1534,19,-0.0569,33.1680
+healthiness,SVR linear,0.0462,0.1382,20,-1.2702,48.4821
+healthiness,XGBoost,0.0677,0.1380,25,-0.1721,34.9609
+tastiness,CatBoost,0.1137,0.1366,27,-0.0712,30.5859
+tastiness,Mean baseline,0.0000,0.0000,0,-0.0226,29.8811
+tastiness,Ridge,0.1375,0.1266,29,-0.0138,29.7268
+tastiness,SVR linear,0.0604,0.1143,27,-1.1040,42.8934
+tastiness,XGBoost,0.0831,0.1466,26,-0.1742,31.9806
+willingness,CatBoost,0.1283,0.1334,29,-0.0620,32.9010
+willingness,Mean baseline,0.0000,0.0000,0,-0.0225,32.3026
+willingness,Ridge,0.1467,0.1171,31,-0.0121,32.1115
+willingness,SVR linear,0.0748,0.1104,27,-1.0591,45.8378
+willingness,XGBoost,0.0896,0.1292,25,-0.1692,34.5005

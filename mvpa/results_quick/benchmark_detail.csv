@@ -1,0 +1,526 @@
+subject,target,model,r,R2,RMSE,time_s
+sub-016,healthiness,Mean baseline,0.0000,-0.0231,31.8932,0.0013
+sub-016,healthiness,Ridge,0.2095,0.0160,31.2789,0.0045
+sub-016,healthiness,SVR linear,0.1384,-0.6164,40.0887,0.0247
+sub-016,healthiness,CatBoost,0.1605,-0.0354,32.0849,0.9379
+sub-016,healthiness,XGBoost,0.2706,-0.0172,31.8007,0.2608
+sub-016,tastiness,Mean baseline,0.0000,-0.0099,29.2710,0.0008
+sub-016,tastiness,Ridge,0.2895,0.0697,28.0930,0.0039
+sub-016,tastiness,SVR linear,0.1233,-0.5109,35.8028,0.0207
+sub-016,tastiness,CatBoost,0.1835,-0.0387,29.6855,0.4639
+sub-016,tastiness,XGBoost,0.1622,-0.1636,31.4196,0.2577
+sub-016,willingness,Mean baseline,0.0000,-0.0144,30.9652,0.0008
+sub-016,willingness,Ridge,0.2867,0.0622,29.7740,0.0041
+sub-016,willingness,SVR linear,0.1226,-0.5011,37.6687,0.0201
+sub-016,willingness,CatBoost,0.2047,-0.0280,31.1719,0.4498
+sub-016,willingness,XGBoost,0.0867,-0.2312,34.1140,0.2557
+sub-017,healthiness,Mean baseline,0.0000,-0.0344,37.5761,0.0008
+sub-017,healthiness,Ridge,0.1685,-0.0185,37.2862,0.0041
+sub-017,healthiness,SVR linear,0.1850,-0.9877,52.0893,0.0443
+sub-017,healthiness,CatBoost,0.1898,-0.0162,37.2444,0.4539
+sub-017,healthiness,XGBoost,0.1227,-0.1403,39.4529,0.2583
+sub-017,tastiness,Mean baseline,0.0000,-0.0317,34.1932,0.0007
+sub-017,tastiness,Ridge,0.1841,-0.0241,34.0660,0.0037
+sub-017,tastiness,SVR linear,-0.0325,-1.5279,53.5224,0.0203
+sub-017,tastiness,CatBoost,0.2309,-0.0161,33.9322,0.4536
+sub-017,tastiness,XGBoost,0.2197,-0.0969,35.2559,0.2557
+sub-017,willingness,Mean baseline,0.0000,-0.0289,38.4290,0.0007
+sub-017,willingness,Ridge,0.1563,-0.0392,38.6212,0.0038
+sub-017,willingness,SVR linear,-0.0779,-1.6909,62.1473,0.0256
+sub-017,willingness,CatBoost,0.1893,-0.0202,38.2663,0.4540
+sub-017,willingness,XGBoost,0.1784,-0.0998,39.7315,0.2594
+sub-018,healthiness,Mean baseline,0.0000,-0.0592,39.3186,0.0009
+sub-018,healthiness,Ridge,0.2156,-0.0634,39.3959,0.0044
+sub-018,healthiness,SVR linear,0.0525,-1.5775,61.3345,0.0259
+sub-018,healthiness,CatBoost,-0.0056,-0.2022,41.8873,0.4542
+sub-018,healthiness,XGBoost,-0.0920,-0.3530,44.4373,0.2504
+sub-018,tastiness,Mean baseline,0.0000,-0.0190,32.9036,0.0008
+sub-018,tastiness,Ridge,-0.1308,-0.1103,34.3453,0.0038
+sub-018,tastiness,SVR linear,-0.0989,-1.3251,49.7019,0.0295
+sub-018,tastiness,CatBoost,0.0600,-0.1325,34.6876,0.4534
+sub-018,tastiness,XGBoost,-0.0010,-0.3049,37.2342,0.2503
+sub-018,willingness,Mean baseline,0.0000,-0.0137,35.9065,0.0008
+sub-018,willingness,Ridge,0.1591,-0.0347,36.2762,0.0038
+sub-018,willingness,SVR linear,-0.0008,-1.6705,58.2802,0.0235
+sub-018,willingness,CatBoost,0.0006,-0.1972,39.0213,0.4510
+sub-018,willingness,XGBoost,-0.0180,-0.3719,41.7723,0.2547
+sub-019,healthiness,Mean baseline,0.0000,-0.0526,35.3208,0.0008
+sub-019,healthiness,Ridge,0.1199,-0.0667,35.5578,0.0039
+sub-019,healthiness,SVR linear,0.0473,-1.4826,54.2450,0.0343
+sub-019,healthiness,CatBoost,0.1717,-0.1056,36.2002,0.4529
+sub-019,healthiness,XGBoost,0.0527,-0.2486,38.4699,0.2527
+sub-019,tastiness,Mean baseline,0.0000,-0.0166,31.8304,0.0007
+sub-019,tastiness,Ridge,-0.0299,-0.0593,32.4918,0.0038
+sub-019,tastiness,SVR linear,0.0237,-1.2433,47.2821,0.0267
+sub-019,tastiness,CatBoost,-0.0224,-0.1344,33.6236,0.4532
+sub-019,tastiness,XGBoost,0.0085,-0.1785,34.2706,0.2530
+sub-019,willingness,Mean baseline,0.0000,-0.0186,31.7689,0.0008
+sub-019,willingness,Ridge,-0.0550,-0.0642,32.4727,0.0037
+sub-019,willingness,SVR linear,0.0604,-0.9772,44.2620,0.0314
+sub-019,willingness,CatBoost,-0.0381,-0.1424,33.6438,0.4549
+sub-019,willingness,XGBoost,-0.0394,-0.2378,35.0207,0.2516
+sub-020,healthiness,Mean baseline,0.0000,-0.0360,37.2524,0.0009
+sub-020,healthiness,Ridge,-0.0141,-0.0528,37.5530,0.0039
+sub-020,healthiness,SVR linear,-0.0611,-1.4789,57.6240,0.0148
+sub-020,healthiness,CatBoost,0.1902,-0.0426,37.3699,0.4518
+sub-020,healthiness,XGBoost,0.2077,-0.1000,38.3863,0.2563
+sub-020,tastiness,Mean baseline,0.0000,-0.0231,34.8117,0.0007
+sub-020,tastiness,Ridge,0.3115,0.0590,33.3864,0.0038
+sub-020,tastiness,SVR linear,0.0494,-1.1174,50.0820,0.0167
+sub-020,tastiness,CatBoost,0.2820,0.0068,34.3006,0.4548
+sub-020,tastiness,XGBoost,0.3244,-0.0065,34.5286,0.2608
+sub-020,willingness,Mean baseline,0.0000,-0.0277,40.3469,0.0007
+sub-020,willingness,Ridge,0.2959,0.0463,38.8666,0.0038
+sub-020,willingness,SVR linear,0.0336,-1.1587,58.4743,0.0146
+sub-020,willingness,CatBoost,0.3705,0.0505,38.7800,0.4542
+sub-020,willingness,XGBoost,0.2669,-0.0759,41.2810,0.2601
+sub-021,healthiness,Mean baseline,0.0000,-0.0267,28.1233,0.0009
+sub-021,healthiness,Ridge,0.2120,-0.0406,28.3136,0.0040
+sub-021,healthiness,SVR linear,0.1241,-0.8288,37.5354,0.0283
+sub-021,healthiness,CatBoost,0.2801,-0.0890,28.9652,0.4536
+sub-021,healthiness,XGBoost,0.2667,-0.1059,29.1879,0.2555
+sub-021,tastiness,Mean baseline,0.0000,-0.0217,30.6708,0.0007
+sub-021,tastiness,Ridge,0.0689,-0.0346,30.8638,0.0037
+sub-021,tastiness,SVR linear,0.0902,-1.2795,45.8120,0.0219
+sub-021,tastiness,CatBoost,0.0233,-0.0760,31.4743,0.4552
+sub-021,tastiness,XGBoost,0.0536,-0.1278,32.2236,0.2442
+sub-021,willingness,Mean baseline,0.0000,-0.0281,34.8103,0.0007
+sub-021,willingness,Ridge,0.0851,-0.0355,34.9357,0.0037
+sub-021,willingness,SVR linear,0.1858,-0.9883,48.4096,0.0288
+sub-021,willingness,CatBoost,-0.0489,-0.1100,36.1697,0.4573
+sub-021,willingness,XGBoost,-0.0904,-0.2348,38.1493,0.2446
+sub-022,healthiness,Mean baseline,0.0000,-0.0257,21.1450,0.0009
+sub-022,healthiness,Ridge,0.0887,-0.0450,21.3426,0.0040
+sub-022,healthiness,SVR linear,-0.0075,-0.5997,26.4067,0.0149
+sub-022,healthiness,CatBoost,0.0545,-0.0976,21.8735,0.4512
+sub-022,healthiness,XGBoost,-0.1178,-0.2942,23.7520,0.2541
+sub-022,tastiness,Mean baseline,0.0000,-0.0622,22.0320,0.0007
+sub-022,tastiness,Ridge,0.2642,0.0224,21.1365,0.0037
+sub-022,tastiness,SVR linear,-0.0197,-1.0487,30.5977,0.0182
+sub-022,tastiness,CatBoost,0.0995,-0.1050,22.4714,0.4549
+sub-022,tastiness,XGBoost,0.0680,-0.1605,23.0287,0.2580
+sub-022,willingness,Mean baseline,0.0000,-0.0382,20.2146,0.0007
+sub-022,willingness,Ridge,0.1005,-0.0279,20.1146,0.0038
+sub-022,willingness,SVR linear,-0.0882,-1.2127,29.5115,0.0132
+sub-022,willingness,CatBoost,0.0541,-0.0930,20.7412,0.4550
+sub-022,willingness,XGBoost,-0.0378,-0.2925,22.5551,0.2545
+sub-023,healthiness,Mean baseline,0.0000,-0.0437,23.4894,0.0009
+sub-023,healthiness,Ridge,-0.2535,-0.1227,24.3620,0.0041
+sub-023,healthiness,SVR linear,-0.0258,-1.1331,33.5800,0.0446
+sub-023,healthiness,CatBoost,0.1262,-0.0597,23.6687,0.4541
+sub-023,healthiness,XGBoost,0.0217,-0.1816,24.9932,0.2576
+sub-023,tastiness,Mean baseline,0.0000,-0.0219,20.7602,0.0007
+sub-023,tastiness,Ridge,0.0379,-0.0554,21.0972,0.0037
+sub-023,tastiness,SVR linear,0.0383,-0.8412,27.8657,0.0263
+sub-023,tastiness,CatBoost,0.2864,0.0470,20.0479,0.4552
+sub-023,tastiness,XGBoost,0.2025,-0.0541,21.0846,0.2678
+sub-023,willingness,Mean baseline,0.0000,-0.0237,24.8224,0.0008
+sub-023,willingness,Ridge,0.0749,-0.0397,25.0155,0.0038
+sub-023,willingness,SVR linear,0.1626,-0.7275,32.2446,0.0239
+sub-023,willingness,CatBoost,0.2178,0.0129,24.3743,0.4565
+sub-023,willingness,XGBoost,0.0433,-0.1659,26.4895,0.2619
+sub-024,healthiness,Mean baseline,0.0000,-0.0208,31.2433,0.0008
+sub-024,healthiness,Ridge,0.1946,-0.0159,31.1676,0.0041
+sub-024,healthiness,SVR linear,0.0021,-1.2078,45.9467,0.0186
+sub-024,healthiness,CatBoost,0.2626,-0.0313,31.4028,0.4554
+sub-024,healthiness,XGBoost,0.1961,-0.1326,32.9093,0.2481
+sub-024,tastiness,Mean baseline,0.0000,-0.0320,31.9434,0.0007
+sub-024,tastiness,Ridge,0.1297,-0.0217,31.7825,0.0037
+sub-024,tastiness,SVR linear,-0.1182,-1.3138,47.8291,0.0212
+sub-024,tastiness,CatBoost,-0.0008,-0.1522,33.7521,0.4539
+sub-024,tastiness,XGBoost,0.0419,-0.2499,35.1543,0.2499
+sub-024,willingness,Mean baseline,0.0000,-0.0333,33.0524,0.0007
+sub-024,willingness,Ridge,0.1387,-0.0147,32.7536,0.0037
+sub-024,willingness,SVR linear,-0.1156,-1.3257,49.5875,0.0188
+sub-024,willingness,CatBoost,0.0110,-0.1193,34.4012,0.4524
+sub-024,willingness,XGBoost,0.0985,-0.1874,35.4326,0.2518
+sub-025,healthiness,Mean baseline,0.0000,-0.0236,32.0840,0.0009
+sub-025,healthiness,Ridge,-0.0902,-0.1068,33.3628,0.0040
+sub-025,healthiness,SVR linear,-0.0959,-1.7957,53.0234,0.0298
+sub-025,healthiness,CatBoost,0.0472,-0.1127,33.4505,0.4522
+sub-025,healthiness,XGBoost,0.0902,-0.1672,34.2598,0.2482
+sub-025,tastiness,Mean baseline,0.0000,-0.0340,27.6282,0.0008
+sub-025,tastiness,Ridge,0.0547,-0.0751,28.1716,0.0038
+sub-025,tastiness,SVR linear,0.0602,-0.7952,36.4043,0.0460
+sub-025,tastiness,CatBoost,-0.0803,-0.1710,29.4012,0.4533
+sub-025,tastiness,XGBoost,-0.1246,-0.3409,31.4625,0.2577
+sub-025,willingness,Mean baseline,0.0000,-0.0376,31.0897,0.0008
+sub-025,willingness,Ridge,0.0797,-0.0579,31.3921,0.0038
+sub-025,willingness,SVR linear,-0.0254,-1.1619,44.8764,0.0411
+sub-025,willingness,CatBoost,0.0234,-0.1048,32.0805,0.4530
+sub-025,willingness,XGBoost,-0.0255,-0.2431,34.0294,0.2552
+sub-026,healthiness,Mean baseline,0.0000,-0.0196,38.8737,0.0008
+sub-026,healthiness,Ridge,0.1765,-0.0136,38.7604,0.0039
+sub-026,healthiness,SVR linear,0.1109,-2.7546,74.5984,0.0229
+sub-026,healthiness,CatBoost,0.1067,-0.0594,39.6249,0.4566
+sub-026,healthiness,XGBoost,0.1097,-0.1400,41.1054,0.2608
+sub-026,tastiness,Mean baseline,0.0000,-0.0256,37.9352,0.0008
+sub-026,tastiness,Ridge,0.0885,-0.0394,38.1900,0.0038
+sub-026,tastiness,SVR linear,-0.0164,-1.6136,60.5592,0.0237
+sub-026,tastiness,CatBoost,0.1462,-0.0189,37.8118,0.4551
+sub-026,tastiness,XGBoost,0.0974,-0.1417,40.0254,0.2603
+sub-026,willingness,Mean baseline,0.0000,-0.0047,35.9317,0.0007
+sub-026,willingness,Ridge,-0.0083,-0.0536,36.7946,0.0038
+sub-026,willingness,SVR linear,0.0101,-1.0268,51.0342,0.0213
+sub-026,willingness,CatBoost,0.2043,0.0056,35.7469,0.4542
+sub-026,willingness,XGBoost,0.2344,-0.0282,36.3485,0.2601
+sub-028,healthiness,Mean baseline,0.0000,-0.0484,29.5904,0.0009
+sub-028,healthiness,Ridge,-0.1063,-0.1194,30.5759,0.0039
+sub-028,healthiness,SVR linear,-0.1893,-1.9843,49.9239,0.0209
+sub-028,healthiness,CatBoost,0.0159,-0.0909,30.1839,0.4524
+sub-028,healthiness,XGBoost,-0.0281,-0.1757,31.3357,0.2550
+sub-028,tastiness,Mean baseline,0.0000,-0.0068,34.6269,0.0007
+sub-028,tastiness,Ridge,0.1798,0.0045,34.4314,0.0038
+sub-028,tastiness,SVR linear,0.1231,-1.2259,51.4861,0.0214
+sub-028,tastiness,CatBoost,0.0734,-0.1126,36.4000,0.4595
+sub-028,tastiness,XGBoost,-0.0058,-0.2319,38.3013,0.2521
+sub-028,willingness,Mean baseline,0.0000,-0.0086,36.3318,0.0007
+sub-028,willingness,Ridge,0.2152,0.0225,35.7689,0.0038
+sub-028,willingness,SVR linear,0.1497,-1.1208,52.6848,0.0225
+sub-028,willingness,CatBoost,0.0689,-0.1393,38.6147,0.4611
+sub-028,willingness,XGBoost,0.0262,-0.2045,39.7043,0.2573
+sub-029,healthiness,Mean baseline,0.0000,-0.0282,43.8864,0.0009
+sub-029,healthiness,Ridge,-0.0666,-0.0900,45.1861,0.0038
+sub-029,healthiness,SVR linear,0.1484,-1.4271,67.4273,0.0439
+sub-029,healthiness,CatBoost,-0.0627,-0.1567,46.5490,0.4532
+sub-029,healthiness,XGBoost,-0.0932,-0.2474,48.3399,0.2592
+sub-029,tastiness,Mean baseline,0.0000,-0.0216,38.5882,0.0007
+sub-029,tastiness,Ridge,0.1840,-0.0233,38.6210,0.0037
+sub-029,tastiness,SVR linear,0.0051,-2.1573,67.8386,0.0323
+sub-029,tastiness,CatBoost,0.1174,-0.0496,39.1141,0.4553
+sub-029,tastiness,XGBoost,0.1316,-0.0575,39.2608,0.2623
+sub-029,willingness,Mean baseline,0.0000,-0.0196,43.2168,0.0009
+sub-029,willingness,Ridge,0.1356,-0.0278,43.3886,0.0038
+sub-029,willingness,SVR linear,0.0721,-1.7671,71.1938,0.0501
+sub-029,willingness,CatBoost,0.1061,-0.0571,44.0034,0.4542
+sub-029,willingness,XGBoost,0.0036,-0.1866,46.6210,0.2574
+sub-030,healthiness,Mean baseline,0.0000,-0.0185,40.6676,0.0009
+sub-030,healthiness,Ridge,0.1885,-0.0264,40.8262,0.0039
+sub-030,healthiness,SVR linear,0.0845,-1.1192,58.6623,0.0168
+sub-030,healthiness,CatBoost,0.0792,-0.0947,42.1627,0.4527
+sub-030,healthiness,XGBoost,0.0919,-0.1525,43.2610,0.2537
+sub-030,tastiness,Mean baseline,0.0000,-0.0237,37.6801,0.0007
+sub-030,tastiness,Ridge,0.1622,-0.0178,37.5717,0.0037
+sub-030,tastiness,SVR linear,-0.1098,-1.5966,60.0117,0.0237
+sub-030,tastiness,CatBoost,0.2195,-0.0104,37.4346,0.4525
+sub-030,tastiness,XGBoost,0.1566,-0.1169,39.3576,0.2521
+sub-030,willingness,Mean baseline,0.0000,-0.0267,39.2721,0.0007
+sub-030,willingness,Ridge,0.1666,-0.0384,39.4945,0.0038
+sub-030,willingness,SVR linear,0.0067,-1.2545,58.1949,0.0229
+sub-030,willingness,CatBoost,0.1385,-0.0470,39.6578,0.4537
+sub-030,willingness,XGBoost,0.0755,-0.1940,42.3506,0.2505
+sub-031,healthiness,Mean baseline,0.0000,-0.0381,23.7846,0.0009
+sub-031,healthiness,Ridge,0.3557,0.0790,22.4032,0.0041
+sub-031,healthiness,SVR linear,0.1133,-0.8984,32.1644,0.0237
+sub-031,healthiness,CatBoost,0.3289,0.0734,22.4711,0.4545
+sub-031,healthiness,XGBoost,0.2823,0.0085,23.2451,0.2553
+sub-031,tastiness,Mean baseline,0.0000,-0.0219,25.2920,0.0008
+sub-031,tastiness,Ridge,0.4096,0.1322,23.3062,0.0037
+sub-031,tastiness,SVR linear,0.1783,-0.6283,31.9258,0.0264
+sub-031,tastiness,CatBoost,0.3036,-0.0228,25.3026,0.4532
+sub-031,tastiness,XGBoost,0.2585,-0.1142,26.4085,0.2520
+sub-031,willingness,Mean baseline,0.0000,-0.0203,29.9513,0.0008
+sub-031,willingness,Ridge,0.4318,0.1593,27.1873,0.0038
+sub-031,willingness,SVR linear,0.2963,-0.5113,36.4519,0.0259
+sub-031,willingness,CatBoost,0.3336,0.0221,29.3230,0.4551
+sub-031,willingness,XGBoost,0.2850,-0.0661,30.6154,0.2559
+sub-032,healthiness,Mean baseline,0.0000,-0.0528,38.5732,0.0008
+sub-032,healthiness,Ridge,0.1159,-0.0579,38.6661,0.0038
+sub-032,healthiness,SVR linear,0.0895,-1.0651,54.0246,0.0232
+sub-032,healthiness,CatBoost,0.1270,-0.0811,39.0886,0.4501
+sub-032,healthiness,XGBoost,0.0891,-0.1689,40.6452,0.2513
+sub-032,tastiness,Mean baseline,0.0000,-0.0045,25.5132,0.0007
+sub-032,tastiness,Ridge,0.2191,0.0278,25.1007,0.0037
+sub-032,tastiness,SVR linear,0.0699,-1.0527,36.4721,0.0353
+sub-032,tastiness,CatBoost,0.1805,-0.0298,25.8327,0.4494
+sub-032,tastiness,XGBoost,0.1999,-0.0442,26.0125,0.2577
+sub-032,willingness,Mean baseline,0.0000,-0.0071,25.2620,0.0007
+sub-032,willingness,Ridge,0.2316,0.0206,24.9118,0.0036
+sub-032,willingness,SVR linear,0.0332,-0.9923,35.5306,0.0299
+sub-032,willingness,CatBoost,0.1769,-0.0690,26.0272,0.4486
+sub-032,willingness,XGBoost,0.2047,-0.0968,26.3628,0.2543
+sub-033,healthiness,Mean baseline,0.0000,-0.0150,27.5919,0.0009
+sub-033,healthiness,Ridge,-0.0312,-0.1008,28.7347,0.0039
+sub-033,healthiness,SVR linear,0.0361,-1.0149,38.8759,0.0281
+sub-033,healthiness,CatBoost,-0.0073,-0.1368,29.2006,0.4522
+sub-033,healthiness,XGBoost,-0.0205,-0.2752,30.9269,0.2482
+sub-033,tastiness,Mean baseline,0.0000,-0.0180,26.1133,0.0007
+sub-033,tastiness,Ridge,0.2108,0.0126,25.7173,0.0038
+sub-033,tastiness,SVR linear,0.0468,-1.2470,38.7956,0.0235
+sub-033,tastiness,CatBoost,0.4040,0.1038,24.5012,0.4486
+sub-033,tastiness,XGBoost,0.4374,0.0912,24.6724,0.2585
+sub-033,willingness,Mean baseline,0.0000,-0.0305,27.7453,0.0007
+sub-033,willingness,Ridge,0.2295,0.0162,27.1098,0.0038
+sub-033,willingness,SVR linear,0.1165,-1.2337,40.8492,0.0234
+sub-033,willingness,CatBoost,0.3836,0.0923,26.0409,0.4493
+sub-033,willingness,XGBoost,0.3959,0.0878,26.1052,0.2508
+sub-034,healthiness,Mean baseline,0.0000,-0.0396,29.6687,0.0009
+sub-034,healthiness,Ridge,-0.0201,-0.1113,30.6758,0.0039
+sub-034,healthiness,SVR linear,-0.0387,-1.5496,46.4630,0.0362
+sub-034,healthiness,CatBoost,0.1078,-0.1018,30.5441,0.6134
+sub-034,healthiness,XGBoost,-0.0078,-0.2253,32.2107,0.2627
+sub-034,tastiness,Mean baseline,0.0000,-0.0317,26.8743,0.0007
+sub-034,tastiness,Ridge,0.1383,-0.0280,26.8254,0.0040
+sub-034,tastiness,SVR linear,0.0063,-1.5293,42.0782,0.0435
+sub-034,tastiness,CatBoost,0.1993,0.0022,26.4288,0.4552
+sub-034,tastiness,XGBoost,0.1721,-0.0447,27.0431,0.2568
+sub-034,willingness,Mean baseline,0.0000,-0.0180,28.1829,0.0007
+sub-034,willingness,Ridge,0.2160,0.0012,27.9155,0.0040
+sub-034,willingness,SVR linear,0.1531,-1.0025,39.5271,0.0410
+sub-034,willingness,CatBoost,0.2679,0.0481,27.2528,0.4505
+sub-034,willingness,XGBoost,0.1743,-0.0753,28.9654,0.2572
+sub-035,healthiness,Mean baseline,0.0000,-0.0577,34.0843,0.0009
+sub-035,healthiness,Ridge,-0.0148,-0.0954,34.6864,0.0039
+sub-035,healthiness,SVR linear,0.1889,-0.7591,43.9551,0.0256
+sub-035,healthiness,CatBoost,-0.1457,-0.2037,36.3607,0.4513
+sub-035,healthiness,XGBoost,-0.2470,-0.3570,38.6059,0.2562
+sub-035,tastiness,Mean baseline,0.0000,-0.0136,30.5571,0.0007
+sub-035,tastiness,Ridge,0.1925,0.0235,29.9929,0.0039
+sub-035,tastiness,SVR linear,0.1039,-1.0805,43.7780,0.0269
+sub-035,tastiness,CatBoost,0.1097,-0.0601,31.2499,0.4487
+sub-035,tastiness,XGBoost,0.0298,-0.2286,33.6416,0.2483
+sub-035,willingness,Mean baseline,0.0000,-0.0173,33.3644,0.0007
+sub-035,willingness,Ridge,0.1876,0.0131,32.8625,0.0038
+sub-035,willingness,SVR linear,0.1038,-1.0111,46.9123,0.0270
+sub-035,willingness,CatBoost,0.1772,-0.0086,33.2226,0.4492
+sub-035,willingness,XGBoost,0.0969,-0.1831,35.9815,0.2453
+sub-036,healthiness,Mean baseline,0.0000,-0.0427,32.9345,0.0008
+sub-036,healthiness,Ridge,-0.1119,-0.1270,34.2387,0.0037
+sub-036,healthiness,SVR linear,-0.0282,-2.3569,59.0925,0.0286
+sub-036,healthiness,CatBoost,0.1714,-0.0089,32.3957,0.4931
+sub-036,healthiness,XGBoost,0.1234,-0.0750,33.4406,0.2721
+sub-036,tastiness,Mean baseline,0.0000,-0.0143,26.7177,0.0007
+sub-036,tastiness,Ridge,0.1868,0.0243,26.2041,0.0037
+sub-036,tastiness,SVR linear,0.0871,-1.3948,41.0538,0.0307
+sub-036,tastiness,CatBoost,0.1774,-0.0088,26.6447,0.4408
+sub-036,tastiness,XGBoost,0.1393,-0.1303,28.2042,0.2538
+sub-036,willingness,Mean baseline,0.0000,-0.0409,30.9170,0.0007
+sub-036,willingness,Ridge,0.1060,-0.0424,30.9394,0.0034
+sub-036,willingness,SVR linear,0.1018,-1.2948,45.9065,0.0420
+sub-036,willingness,CatBoost,0.2385,-0.0019,30.3332,0.4364
+sub-036,willingness,XGBoost,0.2009,-0.0517,31.0770,0.2509
+sub-037,healthiness,Mean baseline,0.0000,-0.0328,32.2441,0.0009
+sub-037,healthiness,Ridge,0.0359,-0.0531,32.5591,0.0039
+sub-037,healthiness,SVR linear,-0.0579,-1.1505,46.5271,0.0123
+sub-037,healthiness,CatBoost,0.1385,-0.0698,32.8167,0.4738
+sub-037,healthiness,XGBoost,0.1234,-0.1619,34.1998,0.2687
+sub-037,tastiness,Mean baseline,0.0000,-0.0324,32.0605,0.0008
+sub-037,tastiness,Ridge,0.1887,-0.0158,31.8022,0.0040
+sub-037,tastiness,SVR linear,0.0317,-0.7222,41.4090,0.0128
+sub-037,tastiness,CatBoost,-0.0220,-0.2043,34.6278,0.4602
+sub-037,tastiness,XGBoost,0.0198,-0.3178,36.2218,0.2618
+sub-037,willingness,Mean baseline,0.0000,-0.0302,35.5086,0.0008
+sub-037,willingness,Ridge,0.1695,-0.0089,35.1390,0.0037
+sub-037,willingness,SVR linear,0.0706,-0.7585,46.3921,0.0151
+sub-037,willingness,CatBoost,0.1656,-0.0869,36.4727,0.4633
+sub-037,willingness,XGBoost,0.1902,-0.1962,38.2628,0.2586
+sub-038,healthiness,Mean baseline,0.0000,-0.0484,22.5301,0.0009
+sub-038,healthiness,Ridge,0.1191,-0.0434,22.4760,0.0039
+sub-038,healthiness,SVR linear,0.1987,-0.5705,27.5753,0.0335
+sub-038,healthiness,CatBoost,0.0968,-0.0823,22.8920,0.4510
+sub-038,healthiness,XGBoost,0.0563,-0.1640,23.7399,0.2454
+sub-038,tastiness,Mean baseline,0.0000,-0.0286,23.7127,0.0007
+sub-038,tastiness,Ridge,0.1252,-0.0207,23.6218,0.0037
+sub-038,tastiness,SVR linear,0.2363,-0.8334,31.6582,0.0308
+sub-038,tastiness,CatBoost,0.2355,-0.0092,23.4883,0.4510
+sub-038,tastiness,XGBoost,0.0309,-0.1614,25.1965,0.2435
+sub-038,willingness,Mean baseline,0.0000,-0.0230,24.0369,0.0007
+sub-038,willingness,Ridge,0.0940,-0.0315,24.1364,0.0038
+sub-038,willingness,SVR linear,0.0586,-0.8316,32.1624,0.0395
+sub-038,willingness,CatBoost,0.2093,-0.0434,24.2749,0.4512
+sub-038,willingness,XGBoost,0.0290,-0.1736,25.7449,0.2455
+sub-040,healthiness,Mean baseline,0.0000,-0.0255,37.3650,0.0008
+sub-040,healthiness,Ridge,0.1651,-0.0128,37.1329,0.0042
+sub-040,healthiness,SVR linear,0.2673,-0.4214,43.9891,0.0392
+sub-040,healthiness,CatBoost,0.1531,-0.0414,37.6525,0.4508
+sub-040,healthiness,XGBoost,0.0441,-0.1576,39.6982,0.2520
+sub-040,tastiness,Mean baseline,0.0000,-0.0120,30.9864,0.0008
+sub-040,tastiness,Ridge,0.3290,0.0784,29.5697,0.0038
+sub-040,tastiness,SVR linear,0.2877,-0.5247,38.0338,0.0323
+sub-040,tastiness,CatBoost,0.1940,-0.0223,31.1435,0.4530
+sub-040,tastiness,XGBoost,0.1186,-0.1521,33.0617,0.2532
+sub-040,willingness,Mean baseline,0.0000,-0.0176,40.4498,0.0008
+sub-040,willingness,Ridge,0.3363,0.0747,38.5728,0.0045
+sub-040,willingness,SVR linear,0.1779,-0.8358,54.3319,0.0326
+sub-040,willingness,CatBoost,0.2295,-0.0036,40.1719,0.4543
+sub-040,willingness,XGBoost,0.2189,-0.0685,41.4499,0.2536
+sub-041,healthiness,Mean baseline,0.0000,-0.0246,39.1819,0.0008
+sub-041,healthiness,Ridge,-0.1307,-0.1346,41.2312,0.0039
+sub-041,healthiness,SVR linear,-0.0225,-1.7161,63.7941,0.0206
+sub-041,healthiness,CatBoost,0.1537,-0.0774,40.1790,0.4552
+sub-041,healthiness,XGBoost,0.0244,-0.2150,42.6680,0.2639
+sub-041,tastiness,Mean baseline,0.0000,-0.0268,36.4485,0.0007
+sub-041,tastiness,Ridge,0.0394,-0.0565,36.9713,0.0040
+sub-041,tastiness,SVR linear,0.0888,-1.0040,50.9194,0.0270
+sub-041,tastiness,CatBoost,0.0467,-0.1050,37.8119,0.4542
+sub-041,tastiness,XGBoost,0.0164,-0.1631,38.7929,0.2609
+sub-041,willingness,Mean baseline,0.0000,-0.0245,37.5264,0.0007
+sub-041,willingness,Ridge,0.0744,-0.0560,38.0989,0.0036
+sub-041,willingness,SVR linear,0.1398,-1.2385,55.4710,0.0277
+sub-041,willingness,CatBoost,0.1771,-0.0611,38.1917,0.4563
+sub-041,willingness,XGBoost,0.0608,-0.1641,40.0020,0.2573
+sub-042,healthiness,Mean baseline,0.0000,-0.0105,21.9920,0.0009
+sub-042,healthiness,Ridge,0.2771,0.0230,21.6238,0.0041
+sub-042,healthiness,SVR linear,0.1237,-1.0766,31.5257,0.0375
+sub-042,healthiness,CatBoost,0.2654,0.0216,21.6391,0.4611
+sub-042,healthiness,XGBoost,0.2642,-0.0049,21.9305,0.2622
+sub-042,tastiness,Mean baseline,0.0000,-0.0306,25.8287,0.0007
+sub-042,tastiness,Ridge,0.2125,0.0030,25.4047,0.0037
+sub-042,tastiness,SVR linear,0.0858,-1.0564,36.4847,0.0284
+sub-042,tastiness,CatBoost,0.2893,0.0363,24.9761,0.4492
+sub-042,tastiness,XGBoost,0.2843,-0.0296,25.8160,0.2516
+sub-042,willingness,Mean baseline,0.0000,-0.0168,27.7667,0.0008
+sub-042,willingness,Ridge,0.3394,0.0679,26.5851,0.0039
+sub-042,willingness,SVR linear,0.1612,-0.8922,37.8785,0.0291
+sub-042,willingness,CatBoost,0.3540,0.0869,26.3124,0.4531
+sub-042,willingness,XGBoost,0.3011,-0.0070,27.6323,0.2498
+sub-043,healthiness,Mean baseline,0.0000,-0.0297,32.6655,0.0009
+sub-043,healthiness,Ridge,0.2940,-0.0006,32.1998,0.0038
+sub-043,healthiness,SVR linear,0.1393,-0.8314,43.5629,0.0250
+sub-043,healthiness,CatBoost,0.3810,0.0792,30.8896,0.4515
+sub-043,healthiness,XGBoost,0.3623,0.0344,31.6316,0.2570
+sub-043,tastiness,Mean baseline,0.0000,-0.0271,31.4968,0.0007
+sub-043,tastiness,Ridge,0.1580,-0.0256,31.4739,0.0037
+sub-043,tastiness,SVR linear,0.0160,-1.2661,46.7848,0.0217
+sub-043,tastiness,CatBoost,0.0667,-0.1605,33.4802,0.4504
+sub-043,tastiness,XGBoost,0.0406,-0.2720,35.0517,0.2602
+sub-043,willingness,Mean baseline,0.0000,-0.0187,30.9825,0.0007
+sub-043,willingness,Ridge,0.2128,0.0136,30.4870,0.0037
+sub-043,willingness,SVR linear,0.0162,-1.2315,45.8551,0.0247
+sub-043,willingness,CatBoost,0.1439,-0.1121,32.3717,0.4493
+sub-043,willingness,XGBoost,0.1360,-0.2215,33.9266,0.2563
+sub-044,healthiness,Mean baseline,0.0000,-0.0189,36.7654,0.0008
+sub-044,healthiness,Ridge,0.2666,0.0368,35.7471,0.0039
+sub-044,healthiness,SVR linear,0.4750,-0.2411,40.5776,0.0333
+sub-044,healthiness,CatBoost,-0.0274,-0.1539,39.1264,0.4500
+sub-044,healthiness,XGBoost,0.0003,-0.1984,39.8731,0.2537
+sub-044,tastiness,Mean baseline,0.0000,-0.0110,22.7156,0.0007
+sub-044,tastiness,Ridge,-0.0376,-0.0619,23.2809,0.0037
+sub-044,tastiness,SVR linear,0.0222,-0.9049,31.1809,0.0306
+sub-044,tastiness,CatBoost,0.0113,-0.0975,23.6674,0.4489
+sub-044,tastiness,XGBoost,-0.0990,-0.3932,26.6663,0.2566
+sub-044,willingness,Mean baseline,0.0000,-0.0116,25.5180,0.0007
+sub-044,willingness,Ridge,-0.0670,-0.0612,26.1353,0.0040
+sub-044,willingness,SVR linear,0.1548,-0.8669,34.6652,0.0242
+sub-044,willingness,CatBoost,0.0532,-0.0698,26.2414,0.4491
+sub-044,willingness,XGBoost,-0.0483,-0.2510,28.3764,0.2597
+sub-045,healthiness,Mean baseline,0.0000,-0.0371,35.9352,0.0008
+sub-045,healthiness,Ridge,-0.0856,-0.1129,37.2261,0.0039
+sub-045,healthiness,SVR linear,-0.2117,-2.3042,64.1427,0.0196
+sub-045,healthiness,CatBoost,-0.0706,-0.2211,38.9934,0.4488
+sub-045,healthiness,XGBoost,-0.0282,-0.2747,39.8402,0.2500
+sub-045,tastiness,Mean baseline,0.0000,-0.0221,23.5605,0.0007
+sub-045,tastiness,Ridge,0.0785,-0.0353,23.7122,0.0036
+sub-045,tastiness,SVR linear,0.2356,-0.6972,30.3607,0.0240
+sub-045,tastiness,CatBoost,0.2396,0.0296,22.9568,0.4504
+sub-045,tastiness,XGBoost,0.1914,-0.0549,23.9355,0.2563
+sub-045,willingness,Mean baseline,0.0000,-0.0129,34.8512,0.0007
+sub-045,willingness,Ridge,0.1243,-0.0106,34.8114,0.0042
+sub-045,willingness,SVR linear,0.2498,-0.5971,43.7629,0.0285
+sub-045,willingness,CatBoost,0.0932,-0.0441,35.3839,0.4486
+sub-045,willingness,XGBoost,0.1668,-0.0775,35.9468,0.2547
+sub-046,healthiness,Mean baseline,0.0000,-0.0332,26.1526,0.0008
+sub-046,healthiness,Ridge,-0.1018,-0.1067,27.0667,0.0040
+sub-046,healthiness,SVR linear,-0.0831,-1.4627,40.3765,0.0250
+sub-046,healthiness,CatBoost,-0.0787,-0.1211,27.2429,0.4499
+sub-046,healthiness,XGBoost,-0.1470,-0.2435,28.6909,0.2586
+sub-046,tastiness,Mean baseline,0.0000,-0.0144,20.6908,0.0007
+sub-046,tastiness,Ridge,-0.0784,-0.1003,21.5490,0.0043
+sub-046,tastiness,SVR linear,0.0212,-1.1884,30.3910,0.0336
+sub-046,tastiness,CatBoost,-0.1500,-0.2568,23.0306,0.4540
+sub-046,tastiness,XGBoost,-0.2535,-0.4131,24.4211,0.2632
+sub-046,willingness,Mean baseline,0.0000,-0.0172,23.5242,0.0007
+sub-046,willingness,Ridge,0.0458,-0.0671,24.0938,0.0037
+sub-046,willingness,SVR linear,0.0483,-0.9433,32.5142,0.0392
+sub-046,willingness,CatBoost,-0.0575,-0.1599,25.1202,0.4504
+sub-046,willingness,XGBoost,-0.0451,-0.2281,25.8482,0.2659
+sub-047,healthiness,Mean baseline,0.0000,-0.0275,34.2801,0.0009
+sub-047,healthiness,Ridge,-0.0226,-0.0884,35.2814,0.0042
+sub-047,healthiness,SVR linear,0.1979,-1.0801,48.7738,0.0343
+sub-047,healthiness,CatBoost,0.0883,-0.0829,35.1912,0.4555
+sub-047,healthiness,XGBoost,0.0992,-0.1577,36.3869,0.2503
+sub-047,tastiness,Mean baseline,0.0000,-0.0104,29.0749,0.0007
+sub-047,tastiness,Ridge,0.0645,-0.0353,29.4306,0.0044
+sub-047,tastiness,SVR linear,0.2423,-0.7634,38.4097,0.0334
+sub-047,tastiness,CatBoost,0.0687,-0.0637,29.8312,0.4505
+sub-047,tastiness,XGBoost,0.0347,-0.1471,30.9789,0.2506
+sub-047,willingness,Mean baseline,0.0000,-0.0107,32.3838,0.0007
+sub-047,willingness,Ridge,0.0026,-0.0619,33.1939,0.0038
+sub-047,willingness,SVR linear,0.1802,-1.0279,45.8715,0.0266
+sub-047,willingness,CatBoost,0.0017,-0.1314,34.2628,0.4511
+sub-047,willingness,XGBoost,0.0142,-0.1968,35.2388,0.2496
+sub-048,healthiness,Mean baseline,0.0000,-0.0446,44.7863,0.0009
+sub-048,healthiness,Ridge,0.1594,-0.0291,44.4523,0.0045
+sub-048,healthiness,SVR linear,-0.0257,-1.0869,63.3027,0.0382
+sub-048,healthiness,CatBoost,0.1149,-0.0867,45.6803,0.4504
+sub-048,healthiness,XGBoost,0.0618,-0.1697,47.3924,0.2552
+sub-048,tastiness,Mean baseline,0.0000,-0.0185,44.0417,0.0007
+sub-048,tastiness,Ridge,0.2197,0.0164,43.2810,0.0038
+sub-048,tastiness,SVR linear,0.1835,-0.8590,59.5011,0.0239
+sub-048,tastiness,CatBoost,-0.0230,-0.1705,47.2151,0.4485
+sub-048,tastiness,XGBoost,-0.1071,-0.3836,51.3333,0.2523
+sub-048,willingness,Mean baseline,0.0000,-0.0284,43.8274,0.0007
+sub-048,willingness,Ridge,0.1589,-0.0134,43.5069,0.0038
+sub-048,willingness,SVR linear,0.0916,-0.9330,60.0884,0.0299
+sub-048,willingness,CatBoost,-0.0080,-0.1376,46.0967,0.4495
+sub-048,willingness,XGBoost,-0.0776,-0.3296,49.8344,0.2562
+sub-049,healthiness,Mean baseline,0.0000,-0.0202,28.5674,0.0009
+sub-049,healthiness,Ridge,-0.0294,-0.0357,28.7832,0.0038
+sub-049,healthiness,SVR linear,-0.0938,-1.1897,41.8526,0.0110
+sub-049,healthiness,CatBoost,0.1954,-0.0056,28.3620,0.4513
+sub-049,healthiness,XGBoost,0.2209,-0.0409,28.8556,0.2522
+sub-049,tastiness,Mean baseline,0.0000,-0.0192,31.1651,0.0007
+sub-049,tastiness,Ridge,-0.0679,-0.0599,31.7815,0.0044
+sub-049,tastiness,SVR linear,-0.1459,-1.0709,44.4248,0.0138
+sub-049,tastiness,CatBoost,-0.1286,-0.1602,33.2518,0.4490
+sub-049,tastiness,XGBoost,-0.0936,-0.2493,34.5047,0.2535
+sub-049,willingness,Mean baseline,0.0000,-0.0233,31.2470,0.0007
+sub-049,willingness,Ridge,0.0027,-0.0509,31.6647,0.0044
+sub-049,willingness,SVR linear,-0.1074,-0.7678,41.0699,0.0154
+sub-049,willingness,CatBoost,-0.1229,-0.1621,33.2988,0.4490
+sub-049,willingness,XGBoost,-0.0664,-0.2531,34.5771,0.2508
+sub-051,healthiness,Mean baseline,0.0000,-0.0342,18.3891,0.0008
+sub-051,healthiness,Ridge,-0.1130,-0.1058,19.0156,0.0039
+sub-051,healthiness,SVR linear,-0.1432,-1.7519,29.9973,0.0276
+sub-051,healthiness,CatBoost,-0.0162,-0.1147,19.0912,0.4505
+sub-051,healthiness,XGBoost,0.0018,-0.2224,19.9927,0.2559
+sub-051,tastiness,Mean baseline,0.0000,-0.0320,21.1776,0.0007
+sub-051,tastiness,Ridge,-0.0516,-0.1107,21.9701,0.0038
+sub-051,tastiness,SVR linear,-0.1513,-1.4858,32.8677,0.0294
+sub-051,tastiness,CatBoost,-0.1211,-0.1899,22.7405,0.4505
+sub-051,tastiness,XGBoost,-0.1225,-0.3651,24.3567,0.2557
+sub-051,willingness,Mean baseline,0.0000,-0.0360,24.1143,0.0007
+sub-051,willingness,Ridge,-0.0235,-0.1079,24.9370,0.0044
+sub-051,willingness,SVR linear,-0.1666,-1.5833,38.0783,0.0305
+sub-051,willingness,CatBoost,-0.0907,-0.1975,25.9261,0.4494
+sub-051,willingness,XGBoost,-0.1077,-0.3385,27.4094,0.2563
+sub-052,healthiness,Mean baseline,0.0000,-0.0486,44.8144,0.0009
+sub-052,healthiness,Ridge,-0.1171,-0.1633,47.2010,0.0039
+sub-052,healthiness,SVR linear,-0.0505,-1.6755,71.5829,0.0344
+sub-052,healthiness,CatBoost,-0.2008,-0.2339,48.6124,0.4503
+sub-052,healthiness,XGBoost,-0.1411,-0.3032,49.9588,0.2512
+sub-052,tastiness,Mean baseline,0.0000,-0.0278,35.1593,0.0007
+sub-052,tastiness,Ridge,0.1844,0.0000,34.6805,0.0036
+sub-052,tastiness,SVR linear,0.0732,-1.4128,53.8711,0.0288
+sub-052,tastiness,CatBoost,0.2341,-0.0151,34.9422,0.4500
+sub-052,tastiness,XGBoost,0.2855,-0.0158,34.9532,0.2550
+sub-052,willingness,Mean baseline,0.0000,-0.0341,35.1511,0.0007
+sub-052,willingness,Ridge,0.1336,-0.0273,35.0357,0.0044
+sub-052,willingness,SVR linear,-0.0249,-1.5865,55.5923,0.0420
+sub-052,willingness,CatBoost,0.2059,-0.0328,35.1289,0.4504
+sub-052,willingness,XGBoost,0.2028,-0.0250,34.9951,0.2507
+sub-053,healthiness,Mean baseline,0.0000,-0.0311,35.2878,0.0009
+sub-053,healthiness,Ridge,0.2229,0.0138,34.5108,0.0045
+sub-053,healthiness,SVR linear,0.0294,-1.2591,52.2338,0.0241
+sub-053,healthiness,CatBoost,0.1544,-0.0670,35.8979,0.4507
+sub-053,healthiness,XGBoost,0.1080,-0.1962,38.0079,0.2536
+sub-053,tastiness,Mean baseline,0.0000,-0.0254,31.7753,0.0007
+sub-053,tastiness,Ridge,0.2958,0.0544,30.5130,0.0037
+sub-053,tastiness,SVR linear,0.2767,-0.3216,36.0736,0.0227
+sub-053,tastiness,CatBoost,0.0455,-0.1226,33.2464,0.4501
+sub-053,tastiness,XGBoost,-0.0113,-0.2757,35.4419,0.2563
+sub-053,willingness,Mean baseline,0.0000,-0.0232,32.1228,0.0007
+sub-053,willingness,Ridge,0.2959,0.0526,30.9111,0.0045
+sub-053,willingness,SVR linear,0.2673,-0.3459,36.8420,0.0300
+sub-053,willingness,CatBoost,0.0573,-0.1067,33.4082,0.4500
+sub-053,willingness,XGBoost,0.0017,-0.2542,35.5658,0.2584

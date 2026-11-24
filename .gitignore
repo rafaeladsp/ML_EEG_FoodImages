@@ -2,3 +2,11 @@
 *.bdf
 *.pkl
 *.fif
+
+# Local Python files and resumable analysis caches
+__pycache__/
+*.py[cod]
+/mvpa/results_*/sub-*.joblib
+/mvpa/results_*/sub-*.tmp
+/mvpa/results_*/protocol.json
+/analysis35/ratings/
