@@ -1,0 +1,13 @@
+step,result,n,p,when (ms)
+1. ERP occipital,Yes − No = -0.53 µV (150–600 ms),82/112 negative,7.106674360102261e-09,"197–244, 275–631, 916–975"
+2. LDA within each participant,AUC = 0.513 (200–500 ms),81/112 above 0.5,6.342646111717976e-05,"369–389, 424–467, 475–564, 576–596, 600–721, 975–1002"
+"3. general pattern, image",AUC = 0.531 (whole period),80/112 above 0.5,1.1573329139574945e-06,"170–260, 280–380, 390–650, 660–720, 760–830, 860–1000"
+"3. general pattern, question",AUC = 0.535 (whole period),81/112 above 0.5,4.19332245801674e-06,"560–680, 770–800, 840–910, 1020–1070, 1150–1190, 1250–1280, 1300–1380, 1390–1430"
+"3. general pattern, response",AUC = 0.545 (whole period),86/112 above 0.5,1.1899356533647619e-08,"-760–-690, -570–-520, -460–-430, -390–-260, -250–-40"
+4. reference: image features only (no EEG),AUC = 0.593,100/112 above 0.5,,
+"4. after visual control, image",AUC = 0.510,,0.15927598233298723,
+"4. beyond consensus (+ visual control), image",coef = -0.013; disagreement AUC = 0.502,,0.8811865361608828,
+"4. after visual control, question",AUC = 0.528,,0.0005562231077399527,
+"4. beyond consensus (+ visual control), question",coef = +0.030; disagreement AUC = 0.500,,0.372702696849296,
+"4. after visual control, response",AUC = 0.533,,0.0005083380754231501,
+"4. beyond consensus (+ visual control), response",coef = +0.067; disagreement AUC = 0.508,,0.07958665860439106,
