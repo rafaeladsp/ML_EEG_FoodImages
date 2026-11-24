@@ -4,7 +4,9 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import xarray as xr
+from PIL import Image
 from sklearn.model_selection import (
     StratifiedGroupKFold,
     StratifiedKFold,
@@ -178,6 +180,63 @@ def plot_curves(curves):
     ax.legend()
     fig.tight_layout()
     return fig, ax
+
+
+# Visual control: colour, contrast... of each image
+
+REPO = Path(__file__).parent
+
+
+def image_features(path):
+    """8 visual features of one image (white background excluded)."""
+    rgb = np.asarray(Image.open(path).convert("RGB"), dtype=float)
+    food = ~(rgb > 235).all(axis=2)
+    R, G, B = (rgb[..., k][food] for k in range(3))
+    hsv = np.asarray(Image.open(path).convert("HSV"), dtype=float)
+    rg, yb = R - G, (R + G) / 2 - B
+    gy, gx = np.gradient(rgb.mean(axis=2))
+    return {"red": R.mean(), "green": G.mean(), "blue": B.mean(),
+            "saturation": hsv[..., 1][food].mean(),
+            "greenness": (G - (R + B) / 2).mean(),
+            "colourfulness": np.sqrt(rg.std() ** 2 + yb.std() ** 2) + 0.3 * np.sqrt(rg.mean() ** 2 + yb.mean() ** 2),
+            "food area": food.mean(), "edge density": np.hypot(gx, gy).mean()}
+
+
+def load_image_features():
+    """Table of the 10 z-scored features, one row per image code ("foodImage.X")."""
+    info = pd.read_csv(REPO / "stimuli/FOODEEG_stimuli_info.csv", encoding="utf-8-sig").set_index("foodImageCode")
+    mapping = pd.read_csv(REPO / "ratings/FOODEEG_p006_ratings.csv")[["stimCode", "stimPath"]]
+    rows = []
+    for _, m in mapping.iterrows():
+        file = m.stimPath.split("/")[-1]
+        number = int(file.split(".")[0])
+        rows.append({"code": f"foodImage.{m.stimCode}",
+                     "luminance": info.loc[number, "mean_luminance"],
+                     "contrast": info.loc[number, "RMS_contrast"],
+                     **image_features(REPO / "stimuli" / file)})
+    feats = pd.DataFrame(rows).set_index("code")
+    return (feats - feats.mean()) / feats.std()
+
+
+def decode_time_visual_control(X, y, groups, clf, features, *, n_splits=5, seed=42):
+    """Like decode_time, but the EEG explained by the image features is removed first.
+
+    In each fold, a linear regression EEG ~ features is fitted on the training
+    images only, and its prediction is subtracted from training and test trials.
+    """
+    eeg = X.transpose("epoch", "channel", "time_ms").values
+    y, groups = np.asarray(y), np.asarray(groups)
+    Z = np.column_stack([np.ones(len(groups)), features.loc[groups].values])
+    flat = eeg.reshape(len(eeg), -1)
+    cv = StratifiedGroupKFold(n_splits=n_splits, shuffle=True, random_state=seed)
+    auc = np.zeros(eeg.shape[2])
+    for tr, te in cv.split(flat, y, groups):
+        beta = np.linalg.lstsq(Z[tr], flat[tr], rcond=None)[0]
+        resid = (flat - Z @ beta).reshape(eeg.shape)
+        fold = [(tr, te)]
+        for t in range(eeg.shape[2]):
+            auc[t] += cross_val_score(clf, resid[:, :, t], y, cv=fold, scoring="roc_auc").mean() / n_splits
+    return xr.DataArray(auc, dims="time_ms", coords={"time_ms": X.time_ms}, name="auc")
 
 
 # French names kept as aliases, so that existing notebooks still run.
